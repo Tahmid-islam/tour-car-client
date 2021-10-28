@@ -1,0 +1,23 @@
+.footer {
+  background-color: #212529;
+  color: white;
+}
+
+.about-text {
+  text-align: justify;
+}
+
+.explore,
+.legal {
+  text-align: left;
+}
+
+.nav {
+  color: white;
+  text-decoration: none;
+}
+
+.nav:hover {
+  color: white;
+  text-decoration: none;
+}
