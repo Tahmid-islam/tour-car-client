@@ -7,6 +7,7 @@ import Footer from "./components/Footer/Footer";
 import AuthProvider from "./context/AuthProvider";
 import Register from "./components/Register/Register";
 import Cars from "./components/Cars/Cars";
+import CarDetails from "./components/CarDetails/CarDetails";
 
 function App() {
   return (
@@ -29,6 +30,9 @@ function App() {
             </Route>
             <Route path="/cars">
               <Cars></Cars>
+            </Route>
+            <Route path="/carsDetails/:carId">
+              <CarDetails></CarDetails>
             </Route>
           </Switch>
           <Footer></Footer>

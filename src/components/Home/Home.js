@@ -4,7 +4,7 @@ import Cars from "../Cars/Cars";
 
 const Home = () => {
   return (
-    <div>
+    <div style={{ backgroundColor: "#ecf0f1" }}>
       <Banners />
       <Cars></Cars>
     </div>

@@ -45,7 +45,7 @@ const Header = () => {
                 as={Link}
                 to="/login"
               >
-                Login
+                Login <i class="fas fa-sign-in-alt"></i>
               </Nav.Link>
             )}
           </Nav>
