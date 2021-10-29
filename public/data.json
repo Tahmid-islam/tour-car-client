@@ -1,0 +1,50 @@
+[
+  {
+    "name": "Hiace Micro Bus",
+    "passengers": "12",
+    "condition": "Fresh, Super Cool AC",
+    "daily_rent": "Dhaka Metro BDT 3500 to 4000 and out side Dhaka BDT 4000 to 4500 (Depend on the distance) Rental rates are excluding other cost e.g fuel, toll, food and tour allowance",
+    "monthly-rent": "BDT 65,000 to 70,000 (Excluding all charges)",
+    "img": "https://www.zoomrentacar.com.bd/wp-content/uploads/hiace_rent-a-car-Dhaka-Bangladesh-798x450.jpg"
+  },
+  {
+    "name": "Allion Sedan Car",
+    "passengers": "5",
+    "condition": "Fresh, Super Cool AC",
+    "daily_rent": "Dhaka Metro  BDT 3500 to 4500 and out side Dhaka BDT 4500 to 5000 (Depend on distance), Rental rates are excluding other cost e.g. fuel, toll, food and tour allowance",
+    "monthly-rent": "BDT 60,000 Rental rates are excluding other cost e.g. fuel, toll, food and tour allowance.",
+    "img": "https://www.zoomrentacar.com.bd/wp-content/uploads/allion-for-zoom-car-rental-798x466.jpg"
+  },
+  {
+    "name": "X NOAH Micro Bus",
+    "passengers": "7",
+    "condition": "Fresh, Super Cool AC",
+    "daily_rent": "Dhaka Metro City BDT 3000 to 4000 and out side Dhaka BDT 4000 to 5000 (Depend on the distance) Rental rates are excluding other cost  e.g. fuel, toll, food and tour allowance.",
+    "monthly-rent": "BDT 70,000 Rental rates are excluding other cost e.g. fuel, toll, food and tour allowance.",
+    "img": "https://www.zoomrentacar.com.bd/wp-content/uploads/2016/03/PICK-UP-2.jpg"
+  },
+  {
+    "name": "Tourist Bus/Mini Bus",
+    "passengers": "32",
+    "condition": "Fresh, Super Cool AC",
+    "daily_rent": "Dhaka Metro City BDT 10000 to 15000 and out side Dhaka BDT 4000 to 5000 (Depend on the distance) Rental rates are excluding other cost  e.g. fuel, toll, food and tour allowance.",
+    "monthly-rent": "BDT 2,40,000 Rental rates are excluding other cost e.g. fuel, toll, food and tour allowance.",
+    "img": "https://www.zoomrentacar.com.bd/wp-content/uploads/rent-a-car-Bangladesh_tourist-bus-hire.jpg"
+  },
+  {
+    "name": "Premio Sedan Car",
+    "passengers": "5",
+    "condition": "Fresh, Super Cool AC",
+    "daily_rent": "Dhaka Metro  BDT 3500 to 4500 and out side Dhaka BDT 4500 to 5000 (Depend on distance), Rental rates are excluding other cost e.g. fuel, toll, food and tour allowance",
+    "monthly-rent": "BDT 60,000 Rental rates are excluding other cost e.g. fuel, toll, food and tour allowance.",
+    "img": "https://www.zoomrentacar.com.bd/wp-content/uploads/premio-640x466.jpg"
+  },
+  {
+    "name": "Grand Cabin",
+    "passengers": "15",
+    "condition": "Fresh, Super Cool AC",
+    "daily_rent": "Dhaka Metro BDT 7000 to 8000 and outside Dhaka BDT 8000 to 9000 (Depend on the distance) Rental rates are excluding other cost e.g. fuel, toll, food and tour allowance",
+    "monthly-rent": "BDT 100,000 Rental rates are excluding other cost e.g. fuel, toll, food and tour allowance.",
+    "img": "https://www.zoomrentacar.com.bd/wp-content/uploads/premio-640x466.jpg"
+  }
+]

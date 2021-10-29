@@ -6,10 +6,11 @@ import Home from "./components/Home/Home";
 import Footer from "./components/Footer/Footer";
 import AuthProvider from "./context/AuthProvider";
 import Register from "./components/Register/Register";
+import Cars from "./components/Cars/Cars";
 
 function App() {
   return (
-    <div>
+    <div className="App">
       <AuthProvider>
         <Router>
           <Header></Header>
@@ -25,6 +26,9 @@ function App() {
             </Route>
             <Route path="/register">
               <Register></Register>
+            </Route>
+            <Route path="/cars">
+              <Cars></Cars>
             </Route>
           </Switch>
           <Footer></Footer>

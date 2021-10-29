@@ -17,7 +17,7 @@ const Header = () => {
         <Navbar.Brand as={Link} to="/">
           <img
             className="w-25 px-4 img-fluid"
-            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJf0_njUNo_LXqQ8HxqLRZdMrqplynOEdzHg&usqp=CAU"
+            src="https://static.vecteezy.com/system/resources/thumbnails/000/623/239/small/auto_car-16.jpg"
             alt=""
           />
           <Navbar.Brand className="text-white">Tour Car.com</Navbar.Brand>
@@ -28,13 +28,20 @@ const Header = () => {
             <Nav.Link className="fw-bolder text-white ps-3" as={Link} to="/">
               Home
             </Nav.Link>
+            <Nav.Link
+              className="fw-bolder text-white ps-3"
+              as={Link}
+              to="/cars"
+            >
+              Rent A Car
+            </Nav.Link>
             {user.email ? (
               <Nav.Link onClick={logOut} className="fw-bolder text-white px-3">
                 Logout
               </Nav.Link>
             ) : (
               <Nav.Link
-                className="fw-bolder text-white px-3"
+                className="fw-bolder text-white px-3 bg-danger rounded-3"
                 as={Link}
                 to="/login"
               >
