@@ -4,6 +4,11 @@ import { useState } from "react";
 
 const ManageAllBookings = () => {
   const [bookings, setBookings] = useState([]);
+  let count = 1;
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   useEffect(() => {
     fetch("http://localhost:5000/bookings")
@@ -12,21 +17,23 @@ const ManageAllBookings = () => {
   }, [bookings]);
 
   const handleUpdateStatus = (id) => {
-    const url = `http://localhost:5000/bookings/${id}`;
-    fetch(url, {
-      method: "PUT",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify(bookings),
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        if (data.modifiedCount > 0) {
-          alert("Update Successful");
-          setBookings([data]);
-        }
-      });
+    const proceed = window.confirm("Are you sure, you want to update status?");
+    if (proceed) {
+      const url = `http://localhost:5000/bookings/${id}`;
+      fetch(url, {
+        method: "PUT",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify(bookings),
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          if (data.modifiedCount > 0) {
+            alert("Status Update Successful");
+          }
+        });
+    }
   };
 
   //Delete
@@ -59,6 +66,7 @@ const ManageAllBookings = () => {
           <table className="table table-dark table-striped">
             <thead>
               <tr className="text-center">
+                <th scope="col">Serial</th>
                 <th scope="col">Name</th>
                 <th scope="co">Email</th>
                 <th scope="col">Phone</th>
@@ -73,6 +81,7 @@ const ManageAllBookings = () => {
             <tbody>
               {bookings.map((booking) => (
                 <tr key={booking.carId} className="text-center">
+                  <td>{count++}</td>
                   <td>{booking.name}</td>
                   <td>{booking.email}</td>
                   <td>{booking.phone}</td>

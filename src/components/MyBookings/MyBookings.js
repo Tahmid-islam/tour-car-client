@@ -6,6 +6,12 @@ import useAuth from "../../hooks/useAuth";
 const MyBookings = () => {
   const { user } = useAuth();
   const [bookings, setBookings] = useState([]);
+  let count = 1;
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   useEffect(() => {
     fetch(`http://localhost:5000/myBookings/${user?.email}`)
       .then((res) => res.json())
@@ -41,6 +47,7 @@ const MyBookings = () => {
         <table className="table table-dark table-hover">
           <thead>
             <tr className="text-center">
+              <th scope="col">Serial</th>
               <th scope="col">Name</th>
               <th scope="col">Email</th>
               <th scope="col">Phone</th>
@@ -54,6 +61,7 @@ const MyBookings = () => {
           <tbody>
             {bookings.map((booking) => (
               <tr key={booking.carId} className="text-center">
+                <td>{count++}</td>
                 <td>{booking.name}</td>
                 <td>{booking.email}</td>
                 <td>{booking.phone}</td>

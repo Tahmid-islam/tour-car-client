@@ -1,5 +1,5 @@
 import React from "react";
-import { Nav, Navbar } from "react-bootstrap";
+import { Nav, Navbar, NavDropdown } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
 import "./Header.css";
@@ -37,32 +37,23 @@ const Header = () => {
             </Nav.Link>
 
             {user.email && (
-              <Nav.Link
-                className="fw-bolder text-white ps-3"
-                as={Link}
-                to="/myBookings"
+              <NavDropdown
+                className="fw-bolder ps-3"
+                title={<span className="text-white my-auto">Dashboard</span>}
+                id="basic-nav-dropdown"
               >
-                My Bookings
-              </Nav.Link>
+                <NavDropdown.Item as={Link} to="/myBookings">
+                  My Bookings
+                </NavDropdown.Item>
+                <NavDropdown.Item as={Link} to="/allBookings">
+                  All Bookings
+                </NavDropdown.Item>
+                <NavDropdown.Item as={Link} to="/addCar">
+                  Add A Car
+                </NavDropdown.Item>
+              </NavDropdown>
             )}
-            {user.email && (
-              <Nav.Link
-                className="fw-bolder text-white ps-3"
-                as={Link}
-                to="/addCar"
-              >
-                Add A Car
-              </Nav.Link>
-            )}
-            {user.email && (
-              <Nav.Link
-                className="fw-bolder text-white ps-3"
-                as={Link}
-                to="/allBookings"
-              >
-                All Bookings
-              </Nav.Link>
-            )}
+
             {user.email ? (
               <Nav.Link onClick={logOut} className="fw-bolder text-white px-3">
                 Logout
