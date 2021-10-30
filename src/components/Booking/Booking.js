@@ -8,8 +8,13 @@ const Booking = ({ carData }) => {
   const { _id, name, img } = carData;
   const { register, handleSubmit, reset } = useForm();
   const onSubmit = (data) => {
-    const newData = { carId: _id, ...data, status: "pending", img };
-    console.log(newData);
+    const newData = {
+      carId: _id,
+      ...data,
+      status: "Pending",
+      img,
+      car_name: name,
+    };
     fetch("http://localhost:5000/bookings", {
       method: "POST",
       headers: {
@@ -32,7 +37,7 @@ const Booking = ({ carData }) => {
       <form className="booking-form" onSubmit={handleSubmit(onSubmit)}>
         <input
           className="mt-3 form-control"
-          {...register("name", { required: true, maxLength: 20 })}
+          {...register("name", { required: true })}
           placeholder="Enter Your Name"
         />
         <input
@@ -49,13 +54,7 @@ const Booking = ({ carData }) => {
           {...register("phone", { required: true })}
           placeholder="Enter Your Phone Number"
         />
-        <input
-          className="mt-3 form-control"
-          {...register("car_name", { required: true })}
-          defaultValue={name}
-          placeholder="Enter Your Car Name"
-          readOnly
-        />
+
         <select
           className="mt-3 form-select"
           {...register("rent_type", { required: true })}

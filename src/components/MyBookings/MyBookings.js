@@ -12,6 +12,27 @@ const MyBookings = () => {
       .then((data) => setBookings(data));
   }, [user.email]);
 
+  //Delete
+  const handleDeleteBooking = (id) => {
+    const proceed = window.confirm("Are you sure, you want to delete?");
+    if (proceed) {
+      const url = `http://localhost:5000/bookings/${id}`;
+      fetch(url, {
+        method: "DELETE",
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          if (data.deletedCount > 0) {
+            alert("Deleted Successfully");
+            const remainingBookings = bookings.filter(
+              (booking) => booking._id !== id
+            );
+            setBookings(remainingBookings);
+          }
+        });
+    }
+  };
+
   return (
     <div style={{ height: "100vh" }} className="container pt-5">
       <h3 className="pb-2 text-center fw-bold text-danger">My Bookings</h3>
@@ -40,7 +61,14 @@ const MyBookings = () => {
                 <td>{booking.car_name}</td>
                 <td>{booking.rent_type}</td>
                 <td>{booking.status}</td>
-                <td>X</td>
+                <td>
+                  <button
+                    className="btn-sm btn-danger rounded-3"
+                    onClick={() => handleDeleteBooking(booking._id)}
+                  >
+                    X
+                  </button>
+                </td>
               </tr>
             ))}
           </tbody>

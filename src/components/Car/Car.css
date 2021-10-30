@@ -1,5 +1,4 @@
 .card:hover {
   opacity: 1;
   border: 1px solid #dc3545;
-  padding: 2px;
 }

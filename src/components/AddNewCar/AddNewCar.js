@@ -4,13 +4,25 @@ import { useForm } from "react-hook-form";
 const AddNewCar = () => {
   const { register, handleSubmit, reset } = useForm();
   const onSubmit = (data) => {
-    console.log(data);
-    reset();
+    fetch("http://localhost:5000/cars", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(data),
+    })
+      .then((res) => res.json())
+      .then((result) => {
+        if (result.insertedId) {
+          alert("Car Added Successfully");
+          reset();
+        }
+      });
   };
 
   return (
     <div
-      style={{ height: "80vh" }}
+      style={{ height: "100vh" }}
       className="container border mt-3 shadow rounded-3"
     >
       <div className="pt-5">
@@ -18,7 +30,7 @@ const AddNewCar = () => {
         <form className="booking-form" onSubmit={handleSubmit(onSubmit)}>
           <input
             className="mt-3 form-control"
-            {...register("name", { required: true, maxLength: 20 })}
+            {...register("name", { required: true })}
             placeholder="Enter Car Name"
           />
           <input
