@@ -39,7 +39,7 @@ const CarDetails = () => {
           </p>
         </div>
         <div className="col-md-6 col-lg-6 col-12">
-          <Booking></Booking>
+          <Booking carData={carData}></Booking>
         </div>
       </div>
     </div>

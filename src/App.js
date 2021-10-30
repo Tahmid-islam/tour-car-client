@@ -8,6 +8,10 @@ import AuthProvider from "./context/AuthProvider";
 import Register from "./components/Register/Register";
 import Cars from "./components/Cars/Cars";
 import CarDetails from "./components/CarDetails/CarDetails";
+import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
+import ManageAllBookings from "./components/ManageAllBookings/ManageAllBookings";
+import AddNewCar from "./components/AddNewCar/AddNewCar";
+import MyBookings from "./components/MyBookings/MyBookings";
 
 function App() {
   return (
@@ -31,9 +35,18 @@ function App() {
             <Route path="/cars">
               <Cars></Cars>
             </Route>
-            <Route path="/carsDetails/:carId">
+            <PrivateRoute path="/carsDetails/:carId">
               <CarDetails></CarDetails>
-            </Route>
+            </PrivateRoute>
+            <PrivateRoute path="/allBookings">
+              <ManageAllBookings></ManageAllBookings>
+            </PrivateRoute>
+            <PrivateRoute path="/addCar">
+              <AddNewCar></AddNewCar>
+            </PrivateRoute>
+            <PrivateRoute path="/myBookings">
+              <MyBookings></MyBookings>
+            </PrivateRoute>
           </Switch>
           <Footer></Footer>
         </Router>

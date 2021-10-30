@@ -35,6 +35,34 @@ const Header = () => {
             >
               Rent A Car
             </Nav.Link>
+
+            {user.email && (
+              <Nav.Link
+                className="fw-bolder text-white ps-3"
+                as={Link}
+                to="/myBookings"
+              >
+                My Bookings
+              </Nav.Link>
+            )}
+            {user.email && (
+              <Nav.Link
+                className="fw-bolder text-white ps-3"
+                as={Link}
+                to="/addCar"
+              >
+                Add A Car
+              </Nav.Link>
+            )}
+            {user.email && (
+              <Nav.Link
+                className="fw-bolder text-white ps-3"
+                as={Link}
+                to="/allBookings"
+              >
+                All Bookings
+              </Nav.Link>
+            )}
             {user.email ? (
               <Nav.Link onClick={logOut} className="fw-bolder text-white px-3">
                 Logout
@@ -45,15 +73,16 @@ const Header = () => {
                 as={Link}
                 to="/login"
               >
-                Login <i class="fas fa-sign-in-alt"></i>
+                Login
               </Nav.Link>
             )}
+
+            {user.email && (
+              <Navbar.Text className="fw-bolder text-white px-3">
+                Signed in as: {user.displayName}
+              </Navbar.Text>
+            )}
           </Nav>
-          {user.email && (
-            <Navbar.Text className="fw-bolder text-white px-3">
-              Signed in as: {user.displayName}
-            </Navbar.Text>
-          )}
         </Navbar.Collapse>
       </Navbar>
     </>

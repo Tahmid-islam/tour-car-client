@@ -27,7 +27,7 @@ const Car = (props) => {
               onClick={() => handleBookNow(_id)}
               className="btn btn-danger rounded-3"
             >
-              Book Now <i class="fas fa-chevron-right"></i>
+              Book Now <i className="fas fa-chevron-right"></i>
             </button>
           </Card.Footer>
         </Card>
