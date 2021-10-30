@@ -15,7 +15,7 @@ const Booking = ({ carData }) => {
       img,
       car_name: name,
     };
-    fetch("http://localhost:5000/bookings", {
+    fetch("https://infinite-beach-43388.herokuapp.com/bookings", {
       method: "POST",
       headers: {
         "content-type": "application/json",

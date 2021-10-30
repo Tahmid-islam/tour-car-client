@@ -8,7 +8,7 @@ const CarDetails = () => {
   const { carId } = useParams();
   const [carData, setCarData] = useState({});
   useEffect(() => {
-    fetch(`http://localhost:5000/cars/${carId}`)
+    fetch(`https://infinite-beach-43388.herokuapp.com/cars/${carId}`)
       .then((res) => res.json())
       .then((data) => setCarData(data));
   }, []);

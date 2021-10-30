@@ -9,7 +9,7 @@ const AddNewCar = () => {
   }, []);
 
   const onSubmit = (data) => {
-    fetch("http://localhost:5000/cars", {
+    fetch("https://infinite-beach-43388.herokuapp.com/cars", {
       method: "POST",
       headers: {
         "content-type": "application/json",

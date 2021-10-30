@@ -11,7 +11,7 @@ const ManageAllBookings = () => {
   }, []);
 
   useEffect(() => {
-    fetch("http://localhost:5000/bookings")
+    fetch("https://infinite-beach-43388.herokuapp.com/bookings")
       .then((res) => res.json())
       .then((result) => setBookings(result));
   }, [bookings]);
@@ -19,7 +19,7 @@ const ManageAllBookings = () => {
   const handleUpdateStatus = (id) => {
     const proceed = window.confirm("Are you sure, you want to update status?");
     if (proceed) {
-      const url = `http://localhost:5000/bookings/${id}`;
+      const url = `https://infinite-beach-43388.herokuapp.com/bookings/${id}`;
       fetch(url, {
         method: "PUT",
         headers: {
@@ -40,7 +40,7 @@ const ManageAllBookings = () => {
   const handleDeleteBooking = (id) => {
     const proceed = window.confirm("Are you sure, you want to delete?");
     if (proceed) {
-      const url = `http://localhost:5000/bookings/${id}`;
+      const url = `https://infinite-beach-43388.herokuapp.com/bookings/${id}`;
       fetch(url, {
         method: "DELETE",
       })
