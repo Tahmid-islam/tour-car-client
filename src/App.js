@@ -12,6 +12,8 @@ import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
 import ManageAllBookings from "./components/ManageAllBookings/ManageAllBookings";
 import AddNewCar from "./components/AddNewCar/AddNewCar";
 import MyBookings from "./components/MyBookings/MyBookings";
+import NotFound from "./components/NotFound/NotFound";
+import Contact from "./components/Contact/Contact";
 
 function App() {
   return (
@@ -35,6 +37,9 @@ function App() {
             <Route path="/cars">
               <Cars></Cars>
             </Route>
+            <Route path="/contact">
+              <Contact></Contact>
+            </Route>
             <PrivateRoute path="/carsDetails/:carId">
               <CarDetails></CarDetails>
             </PrivateRoute>
@@ -47,6 +52,9 @@ function App() {
             <PrivateRoute path="/myBookings">
               <MyBookings></MyBookings>
             </PrivateRoute>
+            <Route exact path="*">
+              <NotFound></NotFound>
+            </Route>
           </Switch>
           <Footer></Footer>
         </Router>

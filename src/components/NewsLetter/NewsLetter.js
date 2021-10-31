@@ -3,7 +3,7 @@ import "./NewsLetter.css";
 
 const NewsLetter = () => {
   return (
-    <div className="newsletter text-center m-4 p-4 rounded-3">
+    <div className="newsletter text-center m-4 p-4 rounded-3 border border-danger">
       <h4 className=" fw-bolder fs-4 p-4">NEWSLETTER</h4>
       <div className="row">
         <div className="col-md-12 col-lg-6">

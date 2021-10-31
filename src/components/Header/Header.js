@@ -6,6 +6,7 @@ import "./Header.css";
 
 const Header = () => {
   const { user, logOut } = useAuth();
+
   return (
     <>
       <Navbar
@@ -35,6 +36,13 @@ const Header = () => {
             >
               Rent A Car
             </Nav.Link>
+            <Nav.Link
+              className="fw-bolder text-white ps-3"
+              as={Link}
+              to="/contact"
+            >
+              Contact Us
+            </Nav.Link>
 
             {user.email && (
               <NavDropdown
@@ -51,14 +59,11 @@ const Header = () => {
                 <NavDropdown.Item as={Link} to="/addCar">
                   Add A Car
                 </NavDropdown.Item>
+                <NavDropdown.Item onClick={logOut}>Logout</NavDropdown.Item>
               </NavDropdown>
             )}
 
-            {user.email ? (
-              <Nav.Link onClick={logOut} className="fw-bolder text-white px-3">
-                Logout
-              </Nav.Link>
-            ) : (
+            {!user.email && (
               <Nav.Link
                 className="fw-bolder text-white px-3 bg-danger rounded-3"
                 as={Link}

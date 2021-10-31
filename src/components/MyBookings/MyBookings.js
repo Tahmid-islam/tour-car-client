@@ -2,6 +2,7 @@ import React from "react";
 import { useEffect } from "react";
 import { useState } from "react";
 import useAuth from "../../hooks/useAuth";
+import Slide from "react-reveal/Slide";
 
 const MyBookings = () => {
   const { user } = useAuth();
@@ -42,49 +43,51 @@ const MyBookings = () => {
   };
 
   return (
-    <div style={{ height: "100vh" }} className="container pt-5">
-      <h3 className="pb-2 text-center fw-bold text-danger">My Bookings</h3>
-      <hr />
-      <div className="table-responsive-sm">
-        <table className="table table-dark table-hover">
-          <thead>
-            <tr className="text-center">
-              <th scope="col">Serial</th>
-              <th scope="col">Name</th>
-              <th scope="col">Email</th>
-              <th scope="col">Phone</th>
-              <th scope="col">Address</th>
-              <th scope="col">Car Name</th>
-              <th scope="col">Rent Type</th>
-              <th scope="col">Status</th>
-              <th scope="col">Delete</th>
-            </tr>
-          </thead>
-          <tbody>
-            {bookings.map((booking) => (
-              <tr key={booking.carId} className="text-center">
-                <td>{count++}</td>
-                <td>{booking.name}</td>
-                <td>{booking.email}</td>
-                <td>{booking.phone}</td>
-                <td>{booking.address}</td>
-                <td>{booking.car_name}</td>
-                <td>{booking.rent_type}</td>
-                <td>{booking.status}</td>
-                <td>
-                  <button
-                    className="btn-sm btn-danger rounded-3"
-                    onClick={() => handleDeleteBooking(booking._id)}
-                  >
-                    X
-                  </button>
-                </td>
+    <Slide bottom>
+      <div style={{ height: "100vh" }} className="container pt-5">
+        <h3 className="pb-2 text-center fw-bold text-danger">My Bookings</h3>
+        <hr />
+        <div className="table-responsive-sm">
+          <table className="table table-dark table-hover">
+            <thead>
+              <tr className="text-center">
+                <th scope="col">Serial</th>
+                <th scope="col">Name</th>
+                <th scope="col">Email</th>
+                <th scope="col">Phone</th>
+                <th scope="col">Address</th>
+                <th scope="col">Car Name</th>
+                <th scope="col">Rent Type</th>
+                <th scope="col">Status</th>
+                <th scope="col">Delete</th>
               </tr>
-            ))}
-          </tbody>
-        </table>
+            </thead>
+            <tbody>
+              {bookings.map((booking) => (
+                <tr key={booking.carId} className="text-center">
+                  <td>{count++}</td>
+                  <td>{booking.name}</td>
+                  <td>{booking.email}</td>
+                  <td>{booking.phone}</td>
+                  <td>{booking.address}</td>
+                  <td>{booking.car_name}</td>
+                  <td>{booking.rent_type}</td>
+                  <td>{booking.status}</td>
+                  <td>
+                    <button
+                      className="btn-sm btn-danger rounded-3"
+                      onClick={() => handleDeleteBooking(booking._id)}
+                    >
+                      X
+                    </button>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
       </div>
-    </div>
+    </Slide>
   );
 };
 
